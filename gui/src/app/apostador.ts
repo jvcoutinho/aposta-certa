@@ -1,0 +1,5 @@
+// Apostadores.
+
+class Apostador {
+    
+}

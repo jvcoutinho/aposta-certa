@@ -1,0 +1,5 @@
+// Cadastrar apostadores.
+
+class apostadorService {
+
+}
