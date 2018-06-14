@@ -1,14 +1,19 @@
 {
   "name": "server",
   "version": "0.0.1",
-  "description": "",
+  "description": "Servidor do Aposta Certa",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jasmine"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.15.4"
+    "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "jasmine": "^3.1.0",
+    "request-promise": "^4.2.2",
+    "@types/request-promise": "^4.1.41"
   }
 }
