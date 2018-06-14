@@ -1,4 +1,5 @@
 language: node-js
 node-js:
- - "iojs"
- - "7"
+ - "node"
+install:
+ - npm install
