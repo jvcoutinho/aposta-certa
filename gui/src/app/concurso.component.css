@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css?family=Cairo');
+
+table {
+    width: 65%;
+    margin: auto;
+    border: 1px solid rgb(200, 200, 200);
+    font-family: 'Cairo', sans-serif;
+    font-weight: bold;
+    border-collapse: collapse;
+}
+
+tr {
+   margin:0;
+}
+
+td {
+    text-align: center;
+    padding: 10px 0;
+    border-bottom: 1px solid rgb(200, 200, 200);
+    font-size: 18px;
+    margin: 0;
+}
+
+.mandante {
+    background-color: rgb(240, 240, 240);
+    width: 40%;
+}
+
+.visitante {
+    background-color: rgb(245, 245, 245);
+    width: 40%;
+}
+
+.data {
+    background-color: rgb(13, 110, 183);
+    color: white;
+    font-weight: normal;
+    width: 20%;
+}
