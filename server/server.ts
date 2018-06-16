@@ -17,12 +17,7 @@ app.use(allowCrossDomain);
 app.use(bodyParser.json());
 
 let fabricaApostas = new fabricaDeApostas();
-var options = {
-    uri: 'https://www.gazetaesportiva.com/loteca/#futebol',
-    transform: function (body) {
-        return cheerio.load(body);
-    }
-};
+var options = getCrawler('https://www.gazetaesportiva.com/loteca/#futebol');
 var apostas: any;
 
 app.get('/', function (req, res) {
@@ -40,3 +35,14 @@ app.get('/apostas', function(req, res) {
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!')
 })
+
+function getCrawler(url: String) {
+    return {
+        uri: url,
+        transform: function (body) {
+            return cheerio.load(body);
+        }
+    };
+}
+
+
