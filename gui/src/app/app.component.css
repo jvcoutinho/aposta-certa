@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Permanent+Marker');
+
+h1 {
+    font-family: 'Permanent Marker', cursive;
+    margin: 0 0 20px 0;  
+    color: white;
+    font-size: 80px;
+    background-color: grey;
+    padding-top: 80px;
+    text-align: center;
+}
+
+nav {
+    width: 65%;
+    margin: auto auto 20px auto;
+    font-family: 'Open Sans', sans-serif;       
+}
+
+nav a {
+    background-color: rgb(120, 120, 245);
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 3;
+    border: 2px outset rgb(13, 110, 255);
+}
+
+nav a:hover {
+    background-color: rgb(13, 110, 255);
+}
