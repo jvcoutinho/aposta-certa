@@ -16,26 +16,12 @@ export class ConcursoComponent implements OnInit {
   public apostas: Aposta[];
 
   sortList(): void {
-    let apostasOrdenadas: Aposta[] = this.apostas;
-    apostasOrdenadas.sort(this.compare);
+    this.apostas.sort(this.compare);
   }
 
   private compare = function(a, b): number {
     let days = ['Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado', 'Domingo', 'Segunda-feira', 'Terça-feira'];
-    let aIndex, bIndex;
-    for(let i = 0; i < days.length; i++) {
-      if(days[i] === a.data) {
-          aIndex = i;
-          break;
-      }
-    }
-    for(let i = 0; i < days.length; i++) {
-      if(days[i] === b.data) {
-          bIndex = i;
-          break;
-      }
-    }
-    return aIndex - bIndex;
+    return findIndex(days, a.data) - findIndex(days, b.data);
   }
 
   ngOnInit(): void {
@@ -44,4 +30,12 @@ export class ConcursoComponent implements OnInit {
     .catch(e => console.log('Erro: ' + e));
   }
 
+}
+
+function findIndex(array: any[], element: any): number {
+  for(let i = 0; i < array.length; i++) {
+    if(array[i] === element) {
+        return i;
+    }
+  }
 }
