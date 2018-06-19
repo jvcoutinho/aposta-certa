@@ -3,7 +3,6 @@
 
 var request: any = require('request');
 var cheerio: any = require('cheerio');
-var url: any = require('url-parser');
 export class fabricaDeApostas {
 
     crawlConcurso($): any[] {
@@ -21,32 +20,26 @@ export class fabricaDeApostas {
 
             }
         }
-
+        console.log(apostas);
         return apostas;
     }
-    public crawlChanceDeGol($){
-        var pageToVisit = 'http://www.chancedegol.com.br/copa18.htm';
-        console.log("Visitando a página: " + pageToVisit);
-        request(pageToVisit, function(error, response, body){
-            if(error){
-                console.log("Error: " + error);
-            }
-
-            //Checando resposta HTTP 200
-            console.log("Status: " + response.statusCode);
-            if(response.statusCode === 200){
-                //Pegando o body HTML do site requisitado
-                var takeBody = cheerio.load(body);
-                var jogos = $("table");
-
-                for(let i = 0; i < jogos.length; i++){
-                    for(let j = 0; j < jogos.length; j++){
-                        console.log(jogos[i].children[j]);
-                    }
-                }
-
-            }
-
-        });
+    crawlChanceDeGol($){
+        let probabilidades: any[] = [];
+        var games = $("table");
+        for(let i = 0; i < 36; i+=2){
+            for(let j = 6; j < 11; j+=2){
+                probabilidades.push({
+                    probWinMandante: games[19].children[i].next.next.next.children[j].next.children[0].next.children[0].data,
+                    probDraw: games[19].children[i].next.next.next.children[j].next.children[0].next.children[0].data,
+                    probWinVisitante: games[19].children[i].next.next.next.children[j].next.children[0].next.children[0].data,
+                    //alterando o valor de i muda a seleção da linha da tabela, i sempre tem que ser +=2 para que dê certo
+                    //alterando o valor de j muda a seleção da coluna da tabela, j sempre tem que ser +=2 para que dê certo
+                    //o crawl como está agora seleciona todas as probabilidades do chance de gol
+                });
+             }
+        }
+        console.log(probabilidades);
+        return probabilidades;
+      
     }
 }
