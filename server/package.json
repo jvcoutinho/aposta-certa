@@ -12,8 +12,9 @@
     "express": "^4.16.3"
   },
   "devDependencies": {
+    "@types/jasmine": "^2.8.8",
+    "@types/request-promise": "^4.1.41",
     "jasmine": "^3.1.0",
-    "request-promise": "^4.2.2",
-    "@types/request-promise": "^4.1.41"
+    "request-promise": "^4.2.2"
   }
 }

@@ -3,6 +3,7 @@ var request: any = require('request');
 var cheerio: any = require('cheerio');
 var url: any = require('url-parser');
 
+
 class fabricaDeApostas {
     private pageToVisit: String;
 
@@ -10,7 +11,7 @@ class fabricaDeApostas {
         this.pageToVisit = pageToVisit;
     }
 
-    public crawlChanceDeGol(){
+    public crawlChanceDeGol($){
         console.log("Visitando a página: " + this.pageToVisit);
         request(this.pageToVisit, function(error, response, body){
             if(error){
@@ -22,7 +23,13 @@ class fabricaDeApostas {
             if(response.statusCode === 200){
                 //Pegando o body HTML do site requisitado
                 var takeBody = cheerio.load(body);
-                var jogos;//variável para armazenar a parte correspondente ao HTML desejado do site
+                var jogos = $("table");
+
+                for(let i = 0; i < jogos.length; i++){
+                    for(let j = 0; j < jogos.length; j++){
+                        console.log(jogos[i].children[j]);
+                    }
+                }
 
             }
 
@@ -33,4 +40,3 @@ class fabricaDeApostas {
     }
 
 }
-(new fabricaDeApostas('http://www.chancedegol.com.br/copa18.htm')).crawlChanceDeGol();
