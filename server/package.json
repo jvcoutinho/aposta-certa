@@ -9,7 +9,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.3"
+    "cheerio": "^0.22.0",
+    "express": "^4.16.3",
+    "request": "^2.65.0",
+    "url-parse": "^1.0.5"
   },
   "devDependencies": {
     "@types/jasmine": "^2.8.8",

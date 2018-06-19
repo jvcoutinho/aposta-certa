@@ -1,0 +1,16 @@
+<nav>
+    <button (click)="sortList()">Data</button>    
+</nav>
+<table>
+    <tr *ngFor="let a of apostas">
+        <td class="mandante">
+            {{a.mandante.toUpperCase()}}
+        </td>
+        <td class="visitante">
+            {{a.visitante.toUpperCase()}}
+        </td>
+        <td class="data">
+            {{a.data.toUpperCase()}}
+        </td>
+    </tr>
+</table>

@@ -4,7 +4,7 @@ export let config: Config = {
 
     seleniumAddress: 'http://127.0.0.1:4444/wd/hub',
 
-    SELENIUM_PROMISE_MANAGER: false,
+    SELENIUM_PROMISE_MANAGER: true,
 
     capabilities: {
         browserName: 'chrome'
