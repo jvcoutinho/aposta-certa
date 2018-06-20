@@ -7,7 +7,9 @@ export let config: Config = {
     SELENIUM_PROMISE_MANAGER: true,
 
     capabilities: {
-        browserName: 'chrome'
+        browserName: 'chrome',
+        version: "67.0.3396.87", 
+        chromeOptions: {binary: '/home/CIN/jva/.local/opt/google/chrome/google-chrome'} 
     },
 
     framework: 'custom',
