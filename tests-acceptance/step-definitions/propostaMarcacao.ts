@@ -40,7 +40,7 @@ defineSupportCode(function ({ Given, When, Then }) {
     });
 
     When(/^Eu solicito para "([^\"]*)"$/, async(nome) =>{
-        //await element(by.buttonText(nome.toString())).click();
+        await element(by.className('marcacaoBotao')).click();
     });
     
     Then(/^Eu vejo a proposta de aposta "simples" para "vitória do ([^\"]*)"$/,async(time)=>{
