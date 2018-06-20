@@ -1,5 +1,27 @@
 @import url('https://fonts.googleapis.com/css?family=Cairo');
 
+nav {
+    width: 65%;
+    margin: auto;
+    text-align: right;
+    padding-right: 10%;
+    margin-bottom: 2px;
+}
+
+nav button {
+    background-color: transparent; /* Green */
+    border: none;
+    color: black;
+    text-decoration: underline; 
+    font-size: 15px;
+    font-weight: bold;
+    font-family: 'Cairo', sans-serif;    
+}
+
+nav button:hover {
+    cursor: pointer;
+}
+
 table {
     width: 65%;
     margin: auto;

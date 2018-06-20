@@ -2,9 +2,9 @@
 
 class Aposta {
 
-    private mandante: String;
-    private visitante: String;
-    private data: String;
+    public mandante: String;
+    public visitante: String;
+    public data: String;
 
     public constructor(mandante: String, visitante: String, data: String) {
         this.mandante = mandante;
