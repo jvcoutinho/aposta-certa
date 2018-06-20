@@ -4,4 +4,18 @@
     <a routerLink="/concurso">Concurso</a>
 </nav>
 
+<table>
+    <tr>
+        <td><label>Nome</label></td>
+        <td><input [(ngModel)]="aluno.nome"></td>
+    </tr>
+    <tr>
+        <td><label>Email</label></td>
+        <td><input [(ngModel)]="aluno.email"></td>
+    </tr>
+    <tr>
+        <td><label>Senha</label></td>
+        <td><input [(ngModel)]="aluno.senha"></td>
+    </tr>
+</table>
 <router-outlet></router-outlet>
