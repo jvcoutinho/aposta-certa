@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NgModule } from '@angular/core';
+
 import { Apostador } from './apostador';
 import { ApostadorService } from './apostador.service';
 
@@ -15,7 +16,10 @@ export class AppComponent {
   apostadorService = new ApostadorService(null);
 
   cadastrar(a: Apostador): void {
-    this.apostadorService.cadastrar(a);
-    this.apostador = {nome: "", email: "", senha: ""};
+    if(this.apostadorService.cadastrar(a)){
+      this.apostador = {nome: "", email: "", senha: ""};
+    }else{
+      this.apostador.email = "";
+    }
   }
 }
