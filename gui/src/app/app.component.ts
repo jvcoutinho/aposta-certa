@@ -13,13 +13,17 @@ import { ApostadorService } from './apostador.service';
 export class AppComponent {
   title = 'app';
   apostador: Apostador = {nome:"", email:"", senha:""};
-  apostadorService = new ApostadorService(null);
+  apostadorService = new ApostadorService();
+  emailDuplicado: boolean = false;
 
   cadastrar(a: Apostador): void {
     if(this.apostadorService.cadastrar(a)){
       this.apostador = {nome: "", email: "", senha: ""};
     }else{
-      this.apostador.email = "";
+      this.emailDuplicado = true;
     }
+  }
+  onMove(): void {
+    this.emailDuplicado = false;
   }
 }

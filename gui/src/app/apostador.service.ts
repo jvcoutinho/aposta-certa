@@ -20,9 +20,12 @@ export class ApostadorService {
     apostadores: Apostador[] = [];
     cadastrar(apostador: Apostador): Apostador {
         var result = null;
-        if(!this.apostadores.find(a => a.email == apostador.email)) {
+        if(this.emailNaoCadastrado(apostador.email)) {
             this.apostadores.push(apostador);
         }
        return result;
+    }
+    emailNaoCadastrado(email: string): boolean {
+        return !this.apostadores.find(a => a.email == email);
     }
 }
