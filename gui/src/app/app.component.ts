@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { NgModule } from '@angular/core';
+import { Apostador } from './apostador';
+import { ApostadorService } from './apostador.service';
 
 @Component({
   selector: 'app-root',
@@ -8,11 +11,11 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
   title = 'app';
-  cliente: Cliente = {nome:"", email:"", senha:""};
-}
+  apostador: Apostador = {nome:"", email:"", senha:""};
+  apostadorService = new ApostadorService(null);
 
-export class Cliente {
-  nome: string;
-  email: string;
-  senha: string;
+  cadastrar(a: Apostador): void {
+    this.apostadorService.cadastrar(a);
+    this.apostador = {nome: "", email: "", senha: ""};
+  }
 }
