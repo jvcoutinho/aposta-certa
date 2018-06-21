@@ -1,8 +1,4 @@
-
 // Crawler para pegar as informações dos jogos.
-
-var request: any = require('request');
-var cheerio: any = require('cheerio');
 export class fabricaDeApostas {
 
     crawlConcurso($): any[] {
@@ -26,17 +22,14 @@ export class fabricaDeApostas {
     crawlChanceDeGol($){
         let probabilidades: any[] = [];
         var games = $("table");
-        for(let i = 0; i < 36; i+=2){
-            for(let j = 6; j < 11; j+=2){
+        for(let i = 0; i < 40; i+=2){
                 probabilidades.push({
-                    probWinMandante: games[19].children[i].next.next.next.children[j].next.children[0].next.children[0].data,
-                    probDraw: games[19].children[i].next.next.next.children[j].next.children[0].next.children[0].data,
-                    probWinVisitante: games[19].children[i].next.next.next.children[j].next.children[0].next.children[0].data,
-                    //alterando o valor de i muda a seleção da linha da tabela, i sempre tem que ser +=2 para que dê certo
-                    //alterando o valor de j muda a seleção da coluna da tabela, j sempre tem que ser +=2 para que dê certo
-                    //o crawl como está agora seleciona todas as probabilidades do chance de gol
+                    mandante: games[19].children[i].next.next.next.children[2].next.children[0].next.children[0].data,
+                    visitante: games[19].children[i].next.next.next.children[4].next.children[0].next.children[0].data,
+                    probMandante: games[19].children[i].next.next.next.children[6].next.children[0].next.children[0].data,
+                    probDraw: games[19].children[i].next.next.next.children[8].next.children[0].next.children[0].data,
+                    probVisitante: games[19].children[i].next.next.next.children[10].next.children[0].next.children[0].data,
                 });
-             }
         }
         console.log(probabilidades);
         return probabilidades;
