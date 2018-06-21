@@ -11,9 +11,11 @@ import { ApostadorService } from './apostador.service';
 })
 
 export class AppComponent {
+  constructor(private apostadorService: ApostadorService){}
+
   title = 'app';
+
   apostador: Apostador = {nome:"", email:"", senha:""};
-  apostadorService = new ApostadorService();
   emailDuplicado: boolean = false;
 
   cadastrar(a: Apostador): void {
