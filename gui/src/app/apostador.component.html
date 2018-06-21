@@ -1,0 +1,19 @@
+<html (mousemove)="onMove()">
+    <table>
+        <h2>Cadastro</h2>
+        <tr>
+            <td><label>Nome</label></td>
+            <td><input [(ngModel)]="apostador.nome"></td>
+        </tr>
+        <tr>
+            <td><label>Email</label></td>
+            <td><input [(ngModel)]="apostador.email"></td>
+            <td *ngIf="emailDuplicado">Já há um apostador com esse e-mail</td>
+        </tr>
+        <tr>
+            <td><label>Senha</label></td>
+            <td><input [(ngModel)]="apostador.senha"></td>
+            <td><button (click)="cadastrar(apostador)">Cadastrar-se</button></td>
+        </tr>
+    </table>
+</html>

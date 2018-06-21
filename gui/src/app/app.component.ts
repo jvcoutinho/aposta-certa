@@ -15,12 +15,14 @@ export class AppComponent {
 
   title = 'app';
 
-  apostador: Apostador = {nome:"", email:"", senha:""};
+  apostador: Apostador = new Apostador();
   emailDuplicado: boolean = false;
+  apostadores: Apostador[] = [];
 
   cadastrar(a: Apostador): void {
     if(this.apostadorService.cadastrar(a)){
-      this.apostador = {nome: "", email: "", senha: ""};
+      this.apostadores.push(a);
+      this.apostador = new Apostador();
     }else{
       this.emailDuplicado = true;
     }

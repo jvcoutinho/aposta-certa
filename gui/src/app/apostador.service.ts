@@ -28,4 +28,11 @@ export class ApostadorService {
     emailNaoCadastrado(email: string): boolean {
         return !this.apostadores.find(a => a.email == email);
     }
+
+    getApostadores(): Apostador[] {
+        var result: Apostador[] = [];
+        for(let a of this.apostadores){
+            result.push(a.clone());
+        }return result;
+    }
 }
