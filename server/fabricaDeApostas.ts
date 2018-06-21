@@ -1,5 +1,4 @@
 // Crawler para pegar as informações dos jogos.
-
 export class fabricaDeApostas {
 
     crawlConcurso($): any[] {
@@ -17,8 +16,23 @@ export class fabricaDeApostas {
 
             }
         }
-
+        console.log(apostas);
         return apostas;
     }
-
+    crawlChanceDeGol($){
+        let probabilidades: any[] = [];
+        var games = $("table");
+        for(let i = 0; i < 40; i+=2){
+                probabilidades.push({
+                    mandante: games[19].children[i].next.next.next.children[2].next.children[0].next.children[0].data,
+                    visitante: games[19].children[i].next.next.next.children[4].next.children[0].next.children[0].data,
+                    probMandante: games[19].children[i].next.next.next.children[6].next.children[0].next.children[0].data,
+                    probDraw: games[19].children[i].next.next.next.children[8].next.children[0].next.children[0].data,
+                    probVisitante: games[19].children[i].next.next.next.children[10].next.children[0].next.children[0].data,
+                });
+        }
+        console.log(probabilidades);
+        return probabilidades;
+      
+    }
 }
