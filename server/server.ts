@@ -18,7 +18,9 @@ app.use(bodyParser.json());
 
 let fabricaApostas = new fabricaDeApostas();
 var options = getCrawler('https://www.gazetaesportiva.com/loteca/#futebol');
+var probs = getCrawler('http://www.chancedegol.com.br/copa18.htm');
 var apostas: any;
+var probabilidade: any;
 
 app.get('/', function (req, res) {
     res.send(apostadores)
@@ -31,6 +33,12 @@ app.get('/apostas', function(req, res) {
     res.send(JSON.stringify(apostas));       
 });
 
+app.get('/probs', function(req, res){
+    request(probs)
+    .then($ => probabilidade = fabricaApostas.crawlChanceDeGol($))
+    .catch(e => console.log(e));
+    res.send(JSON.stringify(probabilidade));
+});
 
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!')
