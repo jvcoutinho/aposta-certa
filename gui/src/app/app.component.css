@@ -23,6 +23,7 @@ nav a {
     padding: 5px;
     border-radius: 3;
     border: 2px outset rgb(13, 110, 255);
+    margin: 20%;
 }
 
 nav a:hover {
