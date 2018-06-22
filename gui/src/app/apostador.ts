@@ -6,7 +6,7 @@ export class Apostador {
     senha: string;
 
     constructor(){
-        this.clean;
+        this.clean();
     }
 
     clean():void {
@@ -17,9 +17,13 @@ export class Apostador {
 
     clone(): Apostador {
         var apostador: Apostador = new Apostador();
-        apostador.nome = this.nome;
-        apostador.senha = this.senha;
-        apostador.email = this.email;
+        apostador.copyFrom(this);
         return apostador;
+    }
+
+    copyFrom(from: Apostador): void {
+        this.nome = from.nome;
+        this.senha = from.senha;
+        this.email = from.email;
     }
 }
