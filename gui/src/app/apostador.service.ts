@@ -23,6 +23,12 @@ export class ApostadorService {
         .then(res => res.json() as Proposta[])
         .catch(e => console.log('Erro de acesso: ' + e));
     }
+    getProbs(): any{
+        return this.http.get(this.acURL + "/probs")
+        .toPromise()
+        .then(res =>res.json() as Probabilidades)
+        .catch(e => console.log('Erro de acesso: ' + e));
+    }
     apostadores: Apostador[] = [];
     cadastrar(apostador: Apostador): Apostador {
         var result = null;

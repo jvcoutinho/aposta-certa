@@ -21,9 +21,8 @@ export class fabricaDeApostas {
         return apostas;
     }
     crawlChanceDeGol($): any[]{
-        
         var games = $("table");
-        for(let i = 0; i < 40; i+=2){
+        for(let i = 0; i < 38; i+=2){
                 probabilidades.push({
                     mandante: games[19].children[i].next.next.next.children[2].next.children[0].next.children[0].data,
                     visitante: games[19].children[i].next.next.next.children[4].next.children[0].next.children[0].data,

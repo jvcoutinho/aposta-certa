@@ -42,17 +42,26 @@ td {
     font-size: 18px;
     margin: 0;
 }
-
+.probMandante{
+    background-color: white;
+    width: 5px;
+}
 .mandante {
     background-color: rgb(240, 240, 240);
     width: 40%;
 }
-
+.probDraw{
+    background-color: white;
+    width: 5px;
+}
 .visitante {
     background-color: rgb(245, 245, 245);
     width: 40%;
 }
-
+.probVisitante{
+    background-color: white;
+    width: 5px;
+}
 .data {
     background-color: rgb(13, 110, 183);
     color: white;
