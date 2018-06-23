@@ -13,7 +13,7 @@ import { ApostadorService } from './apostador.service';
 export class AppComponent {
   title = 'app';
   apostador: Apostador = {nome:"", email:"", senha:""};
-  apostadorService = new ApostadorService();
+  public constructor(private apostadorService: ApostadorService){};
   emailDuplicado: boolean = false;
 
   cadastrar(a: Apostador): void {
