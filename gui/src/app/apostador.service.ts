@@ -34,7 +34,18 @@ export class ApostadorService {
         .then(res => res.json() as Aposta[])
         .catch(e => console.log('Erro de acesso: ' + e));
     }
-   
+    getPropostas(): any {
+        return this.http.get(this.acURL + "/propostas")
+        .toPromise()     
+        .then(res => res.json() as Proposta[])
+        .catch(e => console.log('Erro de acesso: ' + e));
+    }
+    getProbs(): any{
+        return this.http.get(this.acURL + "/probs")
+        .toPromise()
+        .then(res =>res.json() as Probabilidades)
+        .catch(e => console.log('Erro de acesso: ' + e));
+    }
     private tratarErro(erro: any): Promise<any>{
         console.error('Acesso mal sucedido ao serviço de cadastro',erro);
         return Promise.reject(erro.message || erro);

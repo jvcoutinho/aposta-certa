@@ -13,7 +13,7 @@ h1 {
 nav {
     width: 65%;
     margin: auto auto 5px auto;
-    font-family: 'Open Sans', sans-serif;       
+    font-family: 'Open Sans', sans-serif;
 }
 
 nav a {
@@ -23,6 +23,7 @@ nav a {
     padding: 5px;
     border-radius: 3;
     border: 2px outset rgb(13, 110, 255);
+    margin: 20%;
 }
 
 nav a:hover {
