@@ -3,6 +3,7 @@ const app = express()
 import bodyParser = require("body-parser");
 var cheerio: any = require('cheerio');
 import { fabricaDeApostas } from './fabricaDeApostas';
+import { fabricaDePropostas } from './fabricaDePropostas';
 var request: any = require('request-promise');
 
 const apostadores = [{nome:'Alexandre', email:'acm@cin.ufpe.br', senha:'python'}]
@@ -17,8 +18,12 @@ app.use(allowCrossDomain);
 app.use(bodyParser.json());
 
 let fabricaApostas = new fabricaDeApostas();
+let fabricaPropostas = new fabricaDePropostas();
 var options = getCrawler('https://www.gazetaesportiva.com/loteca/#futebol');
+var probs = getCrawler('http://www.chancedegol.com.br/copa18.htm');
 var apostas: any;
+var probabilidade: any;
+var propostas: any;
 
 app.get('/', function (req, res) {
     res.send(apostadores)
@@ -31,6 +36,19 @@ app.get('/apostas', function(req, res) {
     res.send(JSON.stringify(apostas));       
 });
 
+app.get('/probs', function(req, res){
+    request(probs)
+    .then($ => probabilidade = fabricaApostas.crawlChanceDeGol($))
+    .catch(e => console.log(e));
+    res.send(JSON.stringify(probabilidade));
+});
+
+app.get('/propostas', function(req, res) {
+    request(options)
+    .then($ => propostas = fabricaPropostas.Propor(fabricaApostas.crawlConcurso($)))
+    .catch(e => console.log(e));
+    res.send(JSON.stringify(propostas));       
+});
 
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!')

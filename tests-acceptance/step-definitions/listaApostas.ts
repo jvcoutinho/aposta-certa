@@ -41,7 +41,7 @@ defineSupportCode(function ({ Given, When, Then }) {
     });
 
     When(/^I sort the list by date$/, async () => {
-        
+        await element(by.buttonText('Data')).click();
     });
 
     Then(/^I see "([^\"]*)" versus "([^\"]*)" before "([^\"]*)" versus "([^\"]*)" on the list$/, async (mandante1, visitante1, mandante2, visitante2) => {
