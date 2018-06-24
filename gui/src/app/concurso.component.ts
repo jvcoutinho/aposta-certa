@@ -49,6 +49,10 @@ export class ConcursoComponent implements OnInit {
     this.apostasService.getAcumulo()
     .then(prize => {  this.prize = prize; this.setAccumulated(); })
     .catch(e => console.log('Erro: ' + e));
+
+    this.apostasService.getProbabilidades()
+    .then(probabilidades => { this.probabilidades = probabilidades; this.intercalate(); })
+    .catch(e => console.log('Erro: ' + e));
   }
 
     this.apostasService.getProbabilidades()
