@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApostadorService } from './apostador.service';
 
 @Component({
-  selector: 'concurso',
+  selector: 'concaurso',
   templateUrl: './concurso.component.html',
   styleUrls: ['./concurso.component.css']
 })

@@ -1,0 +1,17 @@
+<html>
+    <table>
+        <tr>
+            <td><label>Nome</label></td>
+            <td><input [(ngModel)]="apostador.nome" name="namebox"></td>
+        </tr>
+        <tr>
+            <td><label>Email</label></td>
+            <td><input [(ngModel)]="apostador.email" name="emailbox"></td>
+        </tr>
+        <tr>
+            <td><label>Senha</label></td>
+            <td><input [(ngModel)]="apostador.senha"></td>
+            <td><button (click)="cadastrar(apostador)">Cadastrar-se</button></td>
+        </tr>
+    </table>
+</html>

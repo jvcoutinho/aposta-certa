@@ -11,19 +11,17 @@ import { ApostadorService } from './apostador.service';
 })
 
 export class AppComponent {
+  constructor(private apostadorService: ApostadorService){}
+
   title = 'app';
-  apostador: Apostador = {nome:"", email:"", senha:""};
-  public constructor(private apostadorService: ApostadorService){};
-  emailDuplicado: boolean = false;
+
+  apostador: Apostador = new Apostador();
+  apostadores: Apostador[] = [];
 
   cadastrar(a: Apostador): void {
     if(this.apostadorService.cadastrar(a)){
-      this.apostador = {nome: "", email: "", senha: ""};
-    }else{
-      this.emailDuplicado = true;
+      this.apostadores.push(a);
+      this.apostador = new Apostador();
     }
-  }
-  onMove(): void {
-    this.emailDuplicado = false;
   }
 }

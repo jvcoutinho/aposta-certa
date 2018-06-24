@@ -1,15 +1,32 @@
 import { Injectable } from "@angular/core";
 import { Http, Headers } from '@angular/http';
 import { Apostador } from './apostador';
+
 // Cadastrar apostadores.
 
 @Injectable()
 export class ApostadorService {
 
-    private acURL: String = 'http://localhost:3000';
     private headers = new Headers({'Content-Type': 'application/json'});
-
-    public constructor(private http: Http) {}
+    private acURL = 'http://localhost:3000';
+  
+    constructor(private http: Http) { }
+    
+    cadastrar(apostador: Apostador): Promise<Apostador> {
+        return this.http.post(this.acURL + "/apostador",JSON.stringify(apostador), {headers: this.headers})
+            .toPromise()
+           .then(res => {
+              if (res.json().success) {return apostador;} else {return null;}
+           })
+           .catch(this.tratarErro);
+    }
+    
+    getApostadores(): Promise<Apostador[]> {
+        return this.http.get(this.acURL + "/apostadores")
+                   .toPromise()
+                     .then(res => res.json() as Apostador[])
+                     .catch(this.tratarErro);
+    }
 
     getApostas(): any {
         return this.http.get(this.acURL + "/apostas")
@@ -29,15 +46,8 @@ export class ApostadorService {
         .then(res =>res.json() as Probabilidades)
         .catch(e => console.log('Erro de acesso: ' + e));
     }
-    apostadores: Apostador[] = [];
-    cadastrar(apostador: Apostador): Apostador {
-        var result = null;
-        if(this.emailNaoCadastrado(apostador.email)) {
-            this.apostadores.push(apostador);
-        }
-       return result;
-    }
-    emailNaoCadastrado(email: string): boolean {
-        return !this.apostadores.find(a => a.email == email);
+    private tratarErro(erro: any): Promise<any>{
+        console.error('Acesso mal sucedido ao serviço de cadastro',erro);
+        return Promise.reject(erro.message || erro);
     }
 }

@@ -1,27 +1,11 @@
-<html (mousemove)="onMove()">
+<html>
 <h1>Aposta Certa</h1>
 
 <nav>
+    <a name="apostadores" routerLink="/apostadores">Cadastro</a>
     <a routerLink="/concurso">Concurso</a>
     <a class="marcacaoBotao" routerLink="/marcacao">Propor marcação</a>
 </nav>
 
-<table>
-    <h2>Cadastro</h2>
-    <tr>
-        <td><label>Nome</label></td>
-        <td><input [(ngModel)]="apostador.nome"></td>
-    </tr>
-    <tr>
-        <td><label>Email</label></td>
-        <td><input [(ngModel)]="apostador.email"></td>
-        <td *ngIf="emailDuplicado">Já há um apostador com esse e-mail</td>
-    </tr>
-    <tr>
-        <td><label>Senha</label></td>
-        <td><input [(ngModel)]="apostador.senha"></td>
-        <td><button (click)="cadastrar(apostador)">Cadastrar-se</button></td>
-    </tr>
-</table>
 <router-outlet></router-outlet>
 </html>
