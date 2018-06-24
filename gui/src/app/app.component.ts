@@ -16,18 +16,12 @@ export class AppComponent {
   title = 'app';
 
   apostador: Apostador = new Apostador();
-  emailDuplicado: boolean = false;
   apostadores: Apostador[] = [];
 
   cadastrar(a: Apostador): void {
     if(this.apostadorService.cadastrar(a)){
       this.apostadores.push(a);
       this.apostador = new Apostador();
-    }else{
-      this.emailDuplicado = true;
     }
-  }
-  onMove(): void {
-    this.emailDuplicado = false;
   }
 }

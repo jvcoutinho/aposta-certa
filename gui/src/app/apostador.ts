@@ -9,7 +9,7 @@ export class Apostador {
         this.clean();
     }
 
-    clean():void {
+    clean(): void {
         this.nome = "";
         this.email = "";
         this.senha = "";

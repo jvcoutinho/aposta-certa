@@ -7,15 +7,12 @@ export class CadastroDeApostadores {
 
     cadastrar(apostador: Apostador): Apostador {
         var result = null;
-        if(this.emailNaoCadastrado(apostador.email)){
+        if(apostador.nome.length > 0){
             result = new Apostador();
             result.copyFrom(apostador);
             this.apostadores.push(result);
+            console.log(this.apostadores);
         }return result;
-    }
-
-    emailNaoCadastrado(email: string): boolean {
-        return !this.apostadores.find(a => a.email == email);
     }
 
     getApostadores(): Apostador[] {

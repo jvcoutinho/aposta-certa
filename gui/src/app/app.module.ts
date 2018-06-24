@@ -6,14 +6,14 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ConcursoComponent } from './concurso.component';
-import { ApostadorComponent } from './apostador.component';
+import { ApostadoresComponent } from './apostadores.component';
 import { ApostadorService } from './apostador.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     ConcursoComponent,
-    ApostadorComponent
+    ApostadoresComponent
   ],
   imports: [
     BrowserModule,
@@ -25,8 +25,8 @@ import { ApostadorService } from './apostador.service';
         component: ConcursoComponent
       },
       {
-        path: 'apostador',
-        component: ApostadorComponent
+        path: 'apostadores',
+        component: ApostadoresComponent
       }
     ])
   ],
