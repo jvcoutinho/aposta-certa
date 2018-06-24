@@ -3,14 +3,28 @@
 </nav>
 <table>
     <tr *ngFor="let a of apostas">
+        <td></td>
         <td class="mandante">
             {{a.mandante.toUpperCase()}}
         </td>
+        <td></td>
         <td class="visitante">
             {{a.visitante.toUpperCase()}}
         </td>
+        <td></td>
         <td class="data">
             {{a.data.toUpperCase()}}
+        </td>
+    </tr>
+    <tr *ngFor ="let p of probs">
+        <td class="probMandante" id="probMandante">
+            {{p.probMandante}}
+        </td>
+        <td class="probDraw" id="probDraw">
+            {{p.probDraw}}
+        </td>
+        <td class="probVisitante" id="probVisitante">
+            {{p.probVisitante}}
         </td>
     </tr>
 </table>
