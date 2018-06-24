@@ -48,7 +48,11 @@ Then I don't see an "ACUMULOU!" alert
 =======
 Scenario: alerta de acúmulo de aposta
 Given I'm at "Concurso" page	
-Given The prize has accumulated for more than R$ "1000000"
+Given The prize has not accumulated for more than R$ 1.000.000,00
 When I see the estimated prize section
+<<<<<<< HEAD
 Then I see an "ACUMULADO!" alert
 >>>>>>> ac8c2fe... [#7] Testes de aceitacao de acumulo de premio
+=======
+Then I don't see an "ACUMULOU!" alert
+>>>>>>> 43a032c... [#8] Implementacao do alerta de acumulo
