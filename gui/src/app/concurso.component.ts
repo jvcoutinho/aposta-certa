@@ -55,11 +55,6 @@ export class ConcursoComponent implements OnInit {
     .catch(e => console.log('Erro: ' + e));
   }
 
-    this.apostasService.getProbabilidades()
-    .then(probabilidades => { this.probabilidades = probabilidades; this.intercalate(); })
-    .catch(e => console.log('Erro: ' + e));
-  }
-
   private setAccumulated() {
     if(this.prize.length >= 12)
       this.accumulated = 'ACUMULOU!';
