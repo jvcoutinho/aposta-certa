@@ -23,4 +23,13 @@ describe("O cadastro de apostadores", () => {
         expect(apostador.email).toBe("m@gmail.com");
         expect(apostador.senha).toBe("321");
     })
+    
+    it("não aceita apostadores sem nome informado", () => {
+        var apostador: Apostador = new Apostador();
+        apostador.email = "m@gmail.com";
+        apostador.senha = "321";
+        cadastro.cadastrar(apostador);
+        
+        expect(cadastro.getApostadores().length).toBe(0);
+    })
 })
