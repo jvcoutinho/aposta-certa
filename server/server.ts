@@ -68,7 +68,7 @@ app.get('/propostas', function(req, res) {
     res.send(JSON.stringify(propostas));       
 });
 
-app.listen(3000, function () {
+var server = app.listen(3000, function () {
   console.log('Example app listening on port 3000!')
 });
 
@@ -81,4 +81,7 @@ function getCrawler(url: String) {
     };
 }
 
-export { app }
+function closeServer(): void {
+    server.close();
+}
+export { app, server, closeServer }
