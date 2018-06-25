@@ -24,11 +24,11 @@ defineSupportCode(function({ Given, When, Then}) {
         
         if(mensagem == "Cadastro feito com sucesso!"){
             await expect(alertDialog.getText()).to.eventually.equal("Cadastro feito com sucesso!"); 
-           alertDialog.dismiss();
+            alertDialog.dismiss();
            // await element(by.buttonText('OK')).click();
         }else if(mensagem == "Informe um nome, por favor!"){
             await expect(alertDialog.getText()).to.eventually.equal("Informe um nome, por favor!");
-            //browser.switchTo().alert().accept();
+            alertDialog.dismiss();
         }
     });
 });
