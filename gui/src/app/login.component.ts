@@ -3,6 +3,8 @@ import { ApostadorService } from './apostador.service';
 import { Apostador } from './apostador';
 import { NgModule } from '@angular/core';
 import { Router } from '@angular/router';
+import { AppComponent } from './app.component';
+import { posLoginComponent } from './posLogin.component';
 
 @Component({
     selector: 'login',
@@ -29,7 +31,10 @@ export class LoginComponent implements OnInit {
                 if(this.apostadores[i].senha == a.senha){
                     alert("O usuario "+this.apostadores[i].nome+" entrou!");
                     this.apostador = new Apostador();
-                    this.router.navigate(['/concurso']);
+                 
+                    this.router.navigate(['/posLogin']);
+                    
+                    document.getElementsByClassName("home")[0].style.display="none";
                 }else{
                     alert("Senha incorreta!")
                     this.apostador = new Apostador();
@@ -37,7 +42,7 @@ export class LoginComponent implements OnInit {
             }
         }
     }
-  
+ 
     ngOnInit(): void {
       this.apostadorService.getApostadores()
       .then(as => {console.log('Apostadores', as);})
