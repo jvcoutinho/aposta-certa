@@ -1,4 +1,4 @@
-Feature: Cadastro de clientes
+Feature: Cadastro de apostador
 As a apostador,
 I want to fazer o meu cadastro no sistema, informando meus dados solicitados,
 So that possa-se entrar no site para ver as estatísticas de jogos.

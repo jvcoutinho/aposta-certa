@@ -5,9 +5,8 @@ let expect = chai.expect;
 
 defineSupportCode(function({ Given, When, Then}) {
     Given(/^Eu estou na pagina "([^\"]*)"$/, async (page) => {
-        await browser.get("http://localhost:4200/cadastro");
+        await browser.get("http://localhost:4200/apostadores");
         await expect(browser.getTitle()).to.eventually.equal('ApostaCerta');
-        await $("a[name='apostadores']").click();
     });
    
     When(/^Eu preencho o nome "([^\"]*)", preencho o e-mail "([^\"]*)" e a senha com "([^\"]*)" e solicito o cadastro$/, async (nome, email, senha) => {

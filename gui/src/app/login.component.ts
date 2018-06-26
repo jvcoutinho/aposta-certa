@@ -28,7 +28,7 @@ export class LoginComponent{
         for(let i=0; i<this.apostadores.length; i++){
             if(this.apostadores[i].email == a.email){
                 if(this.apostadores[i].senha == a.senha){
-                    alert("O usuario "+this.apostadores[i].nome+" entrou!");
+                    alert("O usuario entrou!");
                     this.apostador = new Apostador();
                     this.router.navigate(['/posLogin']);
                     (<HTMLElement>document.getElementsByClassName('home')[0]).style.display = 'none';
