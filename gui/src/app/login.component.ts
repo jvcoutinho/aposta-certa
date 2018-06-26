@@ -12,10 +12,9 @@ import { posLoginComponent } from './posLogin.component';
     styleUrls: ['./login.component.css']
 })
 
-export class LoginComponent implements OnInit {
+export class LoginComponent{
 
     constructor(private apostadorService: ApostadorService, private router: Router) {
-        //this.apostadores = [];
     }
     apostador: Apostador = new Apostador();
     apostadores: Apostador[] = [];
@@ -39,12 +38,6 @@ export class LoginComponent implements OnInit {
                 }
             }
         }
-    }
- 
-    ngOnInit(): void {
-      this.apostadorService.getApostadores()
-      .then(as => {console.log('Apostadores', as);})
-      .catch(e => console.log('Erro: ' + e));
     }
   }
   
