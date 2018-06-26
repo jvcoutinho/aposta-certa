@@ -31,10 +31,8 @@ export class LoginComponent implements OnInit {
                 if(this.apostadores[i].senha == a.senha){
                     alert("O usuario "+this.apostadores[i].nome+" entrou!");
                     this.apostador = new Apostador();
-                 
                     this.router.navigate(['/posLogin']);
-                    
-                    document.getElementsByClassName("home")[0].style.display="none";
+                    (<HTMLElement>document.getElementsByClassName('home')[0]).style.display = 'none';
                 }else{
                     alert("Senha incorreta!")
                     this.apostador = new Apostador();
