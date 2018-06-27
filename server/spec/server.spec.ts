@@ -13,23 +13,24 @@ describe("O servidor", () => {
     it("inicialmente retorna uma lista de apostadores vazia", () => {
         return request.get(base_url + "apostadores").then(body => 
             expect(body).toBe("[]")).catch(e => expect(e).toEqual(null));
-    });
+    })
 
     it("só cadastra apostadores", () => {
-        var options:any = {method: 'POST', uri: (base_url + "apostador"), body:{name: "Monica", email: "monica@cin.br", password: "teclado"}, json: true};
+        var options:any = {method: 'POST', uri: (base_url + "apostador"),
+         body:{nome: "Monica", email: "monica@cin.br", senha: "teclado"}, json: true};
         return request(options).then(body =>
-            expect(body).toEqual({failure: "O apostador não pode ser cadastrado!"})
+            expect(body).toEqual({success: "O apostador foi cadastrado com sucesso!"})
         ).catch(e =>
             expect(e).toEqual(null)
         )
-    })
+    });
 
     it("não cadastra apostador sem nome informado", () => {
-        return request.post(base_url + "apostador", {"json":{"name": "", "email": "monica@gmail.com", "password": "0987"}}).then(body => {
+        return request.post(base_url + "apostador", {"json":{"nome": "", "email": "monica@gmail.com", "senha": "mouse"}}).then(body => {
             expect(body).toEqual({failure: "O apostador não pode ser cadastrado!"});
             return request.get(base_url + "apostadores").then(body => {
-                expect(body).not.toContain('{"name": "", "email": "monica@gmail.com", "password": "0987"}');
+                expect(body).not.toContain('{"nome": "", "email": "monica@gmail.com", "senha": "0987"}');
             });
         });
-    });
+    })
 })

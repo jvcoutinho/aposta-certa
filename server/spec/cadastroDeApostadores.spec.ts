@@ -5,7 +5,7 @@ describe("O cadastro de apostadores", () => {
     var cadastro: CadastroDeApostadores;
 
     beforeEach(() => cadastro = new CadastroDeApostadores())
-
+    
     it("é inicialmente vazio", () => {
         expect(cadastro.getApostadores().length).toBe(0);
     })

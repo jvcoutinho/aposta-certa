@@ -7,12 +7,20 @@ export class CadastroDeApostadores {
 
     cadastrar(apostador: Apostador): Apostador {
         var result = null;
-        if(apostador.nome.length > 0){
+        if(this.nomeInformado(apostador.nome)){
             result = new Apostador();
             result.copyFrom(apostador);
             this.apostadores.push(result);
             console.log(this.apostadores);
         }return result;
+    }
+
+    nomeInformado(nome: string): boolean {
+        var res = false;
+        if(nome.length > 0){
+            res = true;
+        }
+        return res;
     }
 
     getApostadores(): Apostador[] {
