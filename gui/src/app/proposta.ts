@@ -1,20 +1,20 @@
-// Apostas e suas probabilidades.
+// Apostas e suas propostas.
 
 class Proposta {
 
     public mandante: String;
     public visitante: String;
     public numeroJogo: String;
-    public data: String;
-    private prop_Mandante: boolean;
+    public tipo_proposta: String;
+    public prop_Mandante: boolean;
     public prop_Visitante: boolean;
-    private prop_Empate: boolean;
+    public prop_Empate: boolean;
 
-    public constructor(mandante: String, visitante: String, numeroJoso: String, data: String, prop_Mandante: boolean, prop_Visitante: boolean, prop_Empate: boolean) {
+    public constructor(mandante: String, visitante: String, numeroJoso: String, tipo_proposta: String, prop_Mandante: boolean, prop_Visitante: boolean, prop_Empate: boolean) {
         this.mandante = mandante;
         this.visitante = visitante;
         this.numeroJogo = numeroJoso;
-        this.data = data;
+        this.tipo_proposta = tipo_proposta;
         this.prop_Mandante = prop_Mandante;
         this.prop_Visitante = prop_Visitante;
         this.prop_Empate = prop_Empate;
@@ -43,12 +43,13 @@ class Proposta {
     public setNumeroJogo(numeroJOgo: String){
         this.numeroJogo = numeroJOgo;
     }
-    public getData() {
-        return this.data;
+    
+    public getTipo_proposta() {
+        return this.tipo_proposta;
     }
 
-    public setData(data: String) {
-        this.data = data;
+    public setTipo_proposta(tipo_proposta: String) {
+        this.tipo_proposta = tipo_proposta;
     }
 
     public getprop_Empate(){

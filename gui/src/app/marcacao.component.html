@@ -1,35 +1,30 @@
 <br/>
-<br/>
-
+<nav>
+    <button class="valorProposta" id="valorProposta" (click)="mostrarValor(propostas)" >Valor da proposta</button>    
+</nav>
 
 <table>
     <tr *ngFor="let a of propostas">
            
-            
         <td class="marcacaoMandante" id={{a.mandante}}>
-            {{a.prop_Mandante}}
             {{corPropostas(a.mandante,a.prop_Mandante)}}
         </td>
+
         <td class="mandante">
             {{a.mandante.toUpperCase()}}
         </td>
+
         <td class="marcacaoEmpate" id={{a.numeroJogo}}>
-            {{a.prop_Empate}}
             {{corPropostas(a.numeroJogo,a.prop_Empate)}}
         </td>
+
         <td class="visitante">
             {{a.visitante.toUpperCase()}}
         </td>
+
         <td class="marcacaoVisitante" id={{a.visitante}}>
-            {{a.prop_Visitante}}
             {{corPropostas(a.visitante,a.prop_Visitante)}}
         </td>
-        <td class="data">
-            {{a.data.toUpperCase()}}
-        </td>
-
-        <script type="text/javaScript">
-            document.getElementById("marcacaoMandante").style.backgroundColor = 'red';
-        </script>
+        
     </tr>
 </table>

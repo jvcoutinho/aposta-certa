@@ -4,6 +4,9 @@ import { NgModule } from '@angular/core';
 import { Apostador } from './apostador';
 import { ApostadorService } from './apostador.service';
 
+import { Apostador } from './apostador';
+import { ApostadorService } from './apostador.service';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -12,7 +15,6 @@ import { ApostadorService } from './apostador.service';
 
 export class AppComponent {
   constructor(private apostadorService: ApostadorService){}
-
   title = 'app';
 
   apostador: Apostador = new Apostador();

@@ -29,5 +29,27 @@ export class MarcacaoComponent implements OnInit {
       square.style.background = 'white';
     }
   }
+  
+  mostrarValor(proposto){
+    let valor = valorDaProposta(proposto);
+    let botao = document.getElementsByClassName("valorProposta");
+    if(botao[0].textContent == "Valor da proposta"){
+      botao[0].textContent = "Valor da proposta: R$: "+ valor + ",00";
+    }else{
+      botao[0].textContent = "Valor da proposta";
+    }
+  }
 
+}
+
+function valorDaProposta(proposto){
+  let val = 1;
+  for (let i = 0; i < 14; i++) {
+    if(proposto[i].tipo_proposta=="tripla"){
+      val *= 3;
+    }else if(proposto[i].tipo_proposta=="dupla"){
+      val *= 2;
+    }
+  }
+  return val;
 }

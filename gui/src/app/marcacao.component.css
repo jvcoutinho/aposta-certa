@@ -3,20 +3,19 @@
 nav {
     width: 65%;
     margin: auto;
-    text-align: right;
-    padding-right: 10%;
+    text-align: left;
     margin-bottom: 2px;
 }
 
-nav button {
-    background-color: transparent; /* Green */
+/*nav button {
+    background-color: transparent; /* Green 
     border: none;
     color: black;
     text-decoration: underline; 
     font-size: 15px;
     font-weight: bold;
     font-family: 'Cairo', sans-serif;    
-}
+}*/
 
 nav button:hover {
     cursor: pointer;
@@ -24,7 +23,7 @@ nav button:hover {
 
 table {
     width: 65%;
-    margin: auto;
+    margin: auto auto 15px auto;
     border: 1px solid rgb(200, 200, 200);
     font-family: 'Cairo', sans-serif;
     font-weight: bold;
@@ -38,41 +37,44 @@ tr {
 td {
     text-align: center;
     padding: 10px 0;
-    border-bottom: 1px solid rgb(200, 200, 200);
+    border-bottom: 1px solid rgb(240, 240, 240);
     font-size: 18px;
     margin: 0;
 }
 
 .mandante {
     background-color: rgb(240, 240, 240);
-    width: 21%;
+    width: 25%;
 }
 
 .visitante {
     background-color: rgb(245, 245, 245);
-    width: 21%;
+    width: 25%;
 }
 
-.data {
-    background-color: rgb(13, 110, 183);
-    color: white;
-    font-weight: normal;
-    width: 20%;
-}
-
-#marcacaoMandante{
+.marcacaoMandante{
     background-color: rgb(240, 240, 240);
     font-weight: normal;
-    width: 10%;
+    width: 18%;
 }
 
 .marcacaoEmpate{
     background-color: rgb(240, 240, 240);
-    width: 13%;
+    width: 14%;
 }
 
-#marcacaoVisitante{
+.marcacaoVisitante{
     background-color: rgb(240, 240, 240);
     font-weight: normal;
-    width: 10%;
+    width: 18%;
+}
+
+.valorProposta{
+    background-color: transparent; /* Green */
+    border: none;
+    color: black;
+    text-decoration: underline; 
+    font-size: 15px;
+    font-weight: bold;
+    font-family: 'Cairo', sans-serif;    
 }
