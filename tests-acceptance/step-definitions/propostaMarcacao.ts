@@ -110,6 +110,10 @@ defineSupportCode(function ({ Given, When, Then }) {
     Then(/^Eu vejo o valor da aposta "([^\"]*) reais"$/,async(valor)=>{
         expect(parseInt(valor.toString())==valorDaProposta()).to.equal(true);
     });
+
+    Then(/^Vejo a proposta de aposta "([^\"]*)" para "([^\"]*)"$/, async(aposta, time) => {
+        
+    });
 })
 
 function valorDaProposta(){

@@ -8,8 +8,8 @@ export let config: Config = {
 
     capabilities: {
        browserName: 'chrome',
-       /*version: '67.0.3396.99' , 
-       chromeOptions: {binary: '/home/CIN/rjmf/.local/opt/google/chrome/google-chrome'} */
+     /*  version: '67.0.3396.99' , 
+       chromeOptions: {binary: '/home/CIN/jvsfc/.local/opt/google/chrome/google-chrome'} */
     },
 
     framework: 'custom',

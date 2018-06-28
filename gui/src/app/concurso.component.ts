@@ -32,15 +32,6 @@ export class ConcursoComponent implements OnInit {
     return findIndex(days, a.data) - findIndex(days, b.data);
   }
 
-  sortList(): void {
-    this.apostas.sort(this.compare);
-  }
-
-  private compare = function(a, b): number {
-    let days = ['Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado', 'Domingo', 'Segunda-feira', 'Terça-feira'];
-    return findIndex(days, a.data) - findIndex(days, b.data);
-  }
-
   ngOnInit(): void {
     this.apostasService.getApostas()
     .then(apostas => this.apostas = apostas)
@@ -65,7 +56,7 @@ export class ConcursoComponent implements OnInit {
   private intercalate() {
     
     let apostas = document.getElementsByClassName('apostas');
-    let probabilidades = document.querySelectorAll('.probabilidades');
+    let probabilidades: NodeListOf<HTMLTableCellElement> = document.querySelectorAll('.probabilidades');
     for(let i = 0; i < apostas.length; i++) {
       let probabilidadesText = probabilidades[i].querySelectorAll("td");
       probabilidadesText[0].textContent = 'V: ' + this.probabilidades[i].vitoriaMandante;

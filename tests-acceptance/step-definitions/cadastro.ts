@@ -10,16 +10,16 @@ let expect = chai.expect;
 //And: Eu solicito o cadastro
 //Then: Vejo na tela de cadastro a seguinte mensagem ”Cadastro feito com sucesso!”
 defineSupportCode(function({ Given, When, Then}) {
-    Given(/^Eu estou na página "([^\"]*)"$/, async () => {
-        await browser.get("http://localhost:4200/cadastro");
+     Given(/^Eu estou na page "([^\"]*)"$/, async (pagina) => {
+        await browser.get("http://localhost:4200/apostadores");
         await expect(browser.getTitle()).to.eventually.equal('ApostaCerta');
-    });
+     });
 
-    When(/^Eu preeencho o nome "([^\"]*)", preencho o e-mail "([^\"]*)" e a senha com "([^\"]*)"$/, async (nome, email, senha) => {
-        await $("input[name='namebox']").sendKeys(<string> nome);
-        await $("input[name='emailbox']").sendKeys(<string> email);
-        await $("input[name='passwordbox']").sendKeys(<string> senha);
-        await element(by.buttonText('Cadastrar')).click();
+    When(/^Eu preeencho o nome "([^\"]*)", preencho o e-mail "([^\"]*)" e a senha com "([^\"]*)" e solicito o cadastro$/, async (nome, email, senha) => {
+        await $("#namebox").sendKeys(<string> nome);
+        await $("#emailbox").sendKeys(<string> email);
+        await $("#senhabox").sendKeys(<string> senha);
+        await element(by.buttonText('Cadastrar-se')).click();
     });
 
     Then(/^Vejo na tela de cadastro a seguinte mensagem "Cadastro feito com sucesso!"$/, async () => {
