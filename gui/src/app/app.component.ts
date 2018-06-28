@@ -7,6 +7,9 @@ import { ApostadorService } from './apostador.service';
 import { Apostador } from './apostador';
 import { ApostadorService } from './apostador.service';
 
+import { Apostador } from './apostador';
+import { ApostadorService } from './apostador.service';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
