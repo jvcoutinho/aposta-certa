@@ -5,11 +5,11 @@ So that I can choose a proper option to bet
 
 Scenario: Visualizando as probabilidades em um jogo
 Given I'm at "Concurso" page
-Given "DINAMARCA" has "79%" win probability calculated
-Given "FRANÇA" has "7%" win probability calculated
+Given "DINAMARCA" has "86%" win probability calculated
+Given "FRANÇA" has "6%" win probability calculated
 When I request the field "DINAMARCA" vs "FRANÇA" 
-Then I can see "79%" attached to "DINAMARCA"
-Then I can see "7%" attached to "FRANÇA"
+Then I can see "86%" attached to "DINAMARCA"
+Then I can see "6%" attached to "FRANÇA"
 
 Scenario: Probabilidades correspondem ao jogo
 Given I'm at "Concurso" page
