@@ -1,4 +1,4 @@
-const express = require('express')
+import express = require('express');
 const app = express()
 import bodyParser = require("body-parser");
 var cheerio: any = require('cheerio');
@@ -7,22 +7,20 @@ var request: any = require('request-promise');
 import { fabricaDePropostas } from './fabricaDePropostas';
 import { Apostador } from '../gui/src/app/apostador';
 import { CadastroDeApostadores } from './cadastroDeApostadores';
-
-
-const apostadores = [{nome:'Alexandre', email:'acm@cin.ufpe.br', senha:'python'}]
+var cadastro: CadastroDeApostadores = new CadastroDeApostadores();
+var cheerio: any = require('cheerio');
 
 var allowCrossDomain = function(req: any, res: any, next: any) {
     res.header('Access-Control-Allow-Origin', "*");
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
     res.header('Access-Control-Allow-Headers', 'Content-Type');
     next();
-}
+};
 app.use(allowCrossDomain);
 app.use(bodyParser.json());
 
 let fabricaApostas = new fabricaDeApostas();
 let fabricaPropostas = new fabricaDePropostas();
-var cadastro: CadastroDeApostadores = new CadastroDeApostadores();
 var apostas: any;
 getApostas(getCrawler('https://www.gazetaesportiva.com/loteca/#futebol'));
 var acumulo: any;
@@ -63,7 +61,7 @@ app.get('/propostas', function(req, res) {
 });
 
 
-app.listen(3000, function () {
+var server = app.listen(3000, function () {
     console.log('Example app listening on port 3000!')
 })
 
@@ -100,4 +98,7 @@ function getPropostas(options){
     .catch(e => console.log(e));
 }
 
-
+function closeServer(): void {
+    server.close();
+}
+export { app, server, closeServer }

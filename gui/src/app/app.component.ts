@@ -13,10 +13,10 @@ import { ApostadorService } from './apostador.service';
 export class AppComponent {
   constructor(private apostadorService: ApostadorService){}
   title = 'app';
-
+  
   apostador: Apostador = new Apostador();
   apostadores: Apostador[] = [];
-
+  
   cadastrar(a: Apostador): void {
     if(this.apostadorService.cadastrar(a)){
       this.apostadores.push(a);

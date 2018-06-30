@@ -1,5 +1,4 @@
 // Apostas e suas propostas.
-
 class Proposta {
 
     public mandante: String;

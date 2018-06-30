@@ -1,0 +1,20 @@
+
+.con{
+    width: 65%;
+    margin: auto auto 5px auto;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.con a{
+    background-color: rgb(120, 120, 245);
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 3;
+    border: 2px outset rgb(13, 110, 255);
+    margin: 0%;
+}
+
+.con a:hover {
+    background-color: rgb(13, 110, 255);
+}

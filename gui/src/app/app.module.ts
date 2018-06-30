@@ -12,12 +12,18 @@ import { MarcacaoComponent } from './marcacao.component';
 import { ApostadoresComponent } from './apostadores.component';
 import { ApostadorService } from './apostador.service';
 
+import { LoginComponent } from './login.component';
+import { posLoginComponent } from './posLogin.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
     ConcursoComponent,
     MarcacaoComponent,
-    ApostadoresComponent
+    ApostadoresComponent,
+    LoginComponent,
+    posLoginComponent
   ],
   imports: [
     BrowserModule,
@@ -35,6 +41,14 @@ import { ApostadorService } from './apostador.service';
       {
         path: 'apostadores',
         component: ApostadoresComponent
+      },
+      {
+        path: 'login',
+        component: LoginComponent
+      },
+      {
+        path: 'posLogin',
+        component: posLoginComponent
       }
     ])
   ],

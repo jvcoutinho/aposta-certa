@@ -6,7 +6,6 @@ import { Apostador } from "./apostador";
 
 @Injectable()
 export class ApostadorService {
-
     private acURL: String = 'http://localhost:3000';
     private headers = new Headers({'Content-Type': 'application/json'});
 

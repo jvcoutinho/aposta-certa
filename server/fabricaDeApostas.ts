@@ -1,5 +1,4 @@
 // Crawler para pegar as informações dos jogos.
-
 export class fabricaDeApostas {
 
     crawlConcurso($): any[] {

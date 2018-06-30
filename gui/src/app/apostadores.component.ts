@@ -21,7 +21,7 @@ import { ApostadorService } from './apostador.service';
            if (ab && ab.nome.length > 0) {
               this.apostadores.push(ab);
               this.apostador = new Apostador();
-             // alert("Cadastro realizado com sucesso!");
+              alert("Cadastro feito com sucesso!");
            } else {
               alert("Informe um nome, por favor!");
            }
