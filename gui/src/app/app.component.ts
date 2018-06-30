@@ -12,7 +12,6 @@ import { ApostadorService } from './apostador.service';
 
 export class AppComponent {
   constructor(private apostadorService: ApostadorService){}
-
   title = 'app';
   
   apostador: Apostador = new Apostador();

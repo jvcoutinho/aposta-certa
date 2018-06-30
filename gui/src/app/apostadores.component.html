@@ -1,17 +1,17 @@
-<html>
-    <table>
-        <tr>
-            <td><label>Nome</label></td>
-            <td><input [(ngModel)]="apostador.nome" name="namebox"></td>
-        </tr>
-        <tr>
-            <td><label>Email</label></td>
-            <td><input [(ngModel)]="apostador.email" name="emailbox"></td>
-        </tr>
-        <tr>
-            <td><label>Senha</label></td>
-            <td><input [(ngModel)]="apostador.senha" type="password" name="passwordbox"></td>
-            <td><button (click)="cadastrar(apostador)">Cadastrar-se</button></td>
-        </tr>
-    </table>
-</html>
+<table>
+    <tr>
+        <td class="firstColumn"><label>Nome</label></td>
+        <td class="secondColumn"><input [(ngModel)]="apostador.nome" name="namebox"></td>
+    </tr>
+    <tr>
+        <td class="firstColumn"><label>Email</label></td>
+        <td class="secondColumn"><input [(ngModel)]="apostador.email" name="emailbox"></td>
+        <td id="cadastroBotao"><button id="cadastroBotao" (click)="cadastrar(apostador)">Cadastrar-se</button></td>
+    </tr>
+    <tr>
+        <td class="firstColumn"><label>Senha</label></td>
+        <td class="secondColumn"><input [(ngModel)]="apostador.senha" type="password" name="passwordbox"></td>
+     </tr>
+</table>
+    
+   

@@ -1,5 +1,4 @@
 // Crawler para pegar as informações dos jogos.
-var probabilidades: any[] = [];
 export class fabricaDeApostas {
 
     crawlConcurso($): any[] {
@@ -17,34 +16,30 @@ export class fabricaDeApostas {
 
             }
         }
-        console.log(apostas);
+
         return apostas;
     }
-    crawlChanceDeGol($): any[]{
-        var games = $("table");
-        for(let i = 0; i < 38; i+=2){
-                probabilidades.push({
-                    mandante: games[19].children[i].next.next.next.children[2].next.children[0].next.children[0].data,
-                    visitante: games[19].children[i].next.next.next.children[4].next.children[0].next.children[0].data,
-                    probMandante: games[19].children[i].next.next.next.children[6].next.children[0].next.children[0].data,
-                    probDraw: games[19].children[i].next.next.next.children[8].next.children[0].next.children[0].data,
-                    probVisitante: games[19].children[i].next.next.next.children[10].next.children[0].next.children[0].data,
-                });
+
+    crawlAcumulo($): any {
+        var valorAcumulado = $("table[class='content-lottery__table-content']");
+        return valorAcumulado[1].children[3].children[1].children[3].children[0].data.substr(4);
+    }
+
+    crawlProbabilidades($): any[] {
+        let probabilidades: any[] = [];
+        let jogos = $("tr");
+
+        for(let i = 1; i <= 14; i++) {
+            probabilidades.push({
+                mandante: jogos[i].children[5].children[0].data,
+                visitante: jogos[i].children[9].children[0].data,
+                vitoriaMandante: jogos[i].children[3].children[0].data,
+                vitoriaVisitante: jogos[i].children[11].children[0].data,
+                empate: jogos[i].children[7].children[0].data
+            })
         }
-        console.log(probabilidades);
+        
         return probabilidades;
-      
     }
-    getProbs(): any[]{
-        let probs: any[] = [];
-        for(let i = 0; i < 14; i++){
-            probs.push({
-                Home: probabilidades[i].probMandante,
-                Visit: probabilidades[i].probVisitante,
-                Draw: probabilidades[i].probDraw
-            });
-        }
-        return probs;
-    }
-    
+
 }

@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css?family=Cairo');
+
+table {
+    width: 65%;
+    margin: 20px auto auto auto;
+}
+
+.firstColumn {
+    width: 10%;
+    font-weight: bold;
+    font-family: 'Cairo', sans-serif;
+}
+
+.secondColumn {
+    width: 20%;
+}
+
+td#cadastroBotao {
+    text-align: left;
+}
+
+button#cadastroBotao {
+    background-color: rgb(120, 120, 245);
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 3;
+    border: 2px outset rgb(13, 110, 255);
+    font-weight: bold;
+}
+
+button#cadastroBotao:hover {
+    background-color: rgb(13, 110, 255);
+    cursor: pointer;
+}

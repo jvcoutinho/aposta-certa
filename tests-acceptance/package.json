@@ -10,6 +10,7 @@
     "author": "",
     "devDependencies": {
         "@types/cucumber": "0.0.38",
+        "@types/jasmine": "^2.8.8",
         "@types/node": "^8.0.31",
         "@types/selenium-webdriver": "^3.0.0",
         "chai": "^4.0.2",

@@ -1,5 +1,4 @@
 import { Component, OnInit} from '@angular/core';
-import { NgModule } from '@angular/core';
 
 import { Apostador } from './apostador';
 import { ApostadorService } from './apostador.service';

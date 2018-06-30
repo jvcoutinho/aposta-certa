@@ -23,7 +23,7 @@ h1 {
     padding: 5px;
     border-radius: 3;
     border: 2px outset rgb(13, 110, 255);
-    margin: 0%;
+    margin-right: 5px;
 }
 
 .home a:hover {
