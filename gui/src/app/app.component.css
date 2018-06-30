@@ -10,22 +10,22 @@ h1 {
     text-align: center;
 }
 
-nav {
+.home{
     width: 65%;
     margin: auto auto 5px auto;
     font-family: 'Open Sans', sans-serif;
 }
 
-nav a {
+.home a{
     background-color: rgb(120, 120, 245);
     color: white;
     text-decoration: none;
     padding: 5px;
     border-radius: 3;
     border: 2px outset rgb(13, 110, 255);
-    margin: 20%;
+    margin-right: 5px;
 }
 
-nav a:hover {
+.home a:hover {
     background-color: rgb(13, 110, 255);
 }

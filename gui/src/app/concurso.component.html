@@ -1,30 +1,32 @@
 <nav>
     <button (click)="sortList()">Data</button>    
+    <a class="marcacaoBotao" routerLink="/marcacao">Propor marcação</a>
 </nav>
-<table>
+<table id="concurso">
     <tr *ngFor="let a of apostas">
-        <td></td>
-        <td class="mandante">
-            {{a.mandante.toUpperCase()}}
-        </td>
-        <td></td>
-        <td class="visitante">
-            {{a.visitante.toUpperCase()}}
-        </td>
-        <td></td>
-        <td class="data">
-            {{a.data.toUpperCase()}}
-        </td>
-    </tr>
-    <tr *ngFor ="let p of probs">
-        <td class="probMandante" id="probMandante">
-            {{p.probMandante}}
-        </td>
-        <td class="probDraw" id="probDraw">
-            {{p.probDraw}}
-        </td>
-        <td class="probVisitante" id="probVisitante">
-            {{p.probVisitante}}
-        </td>
+        <table>
+            <tr class="apostas">
+                <td class="mandante">
+                    {{a.mandante.toUpperCase()}}
+                </td>
+                <td class="visitante">
+                    {{a.visitante.toUpperCase()}}
+                </td>
+                <td class="data">
+                    {{a.data.toUpperCase()}}
+                </td>
+            </tr>
+            <tr class="probabilidades">
+                <td name="probabilidadeMandante"></td>
+                <td name="probabilidadeEmpate"></td>
+                <td name="probabilidadeVisitante"></td>
+            </tr>
+        </table>        
     </tr>
 </table>
+
+<div id="prize">
+    PRÊMIO ESTIMADO:
+    <h3 name="prize">R$ {{prize}}</h3>
+    <h3 name="accumulated">{{accumulated}}</h3>
+</div>

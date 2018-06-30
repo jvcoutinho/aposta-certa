@@ -6,14 +6,24 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ConcursoComponent } from './concurso.component';
+
 import { MarcacaoComponent } from './marcacao.component';
+
+import { ApostadoresComponent } from './apostadores.component';
 import { ApostadorService } from './apostador.service';
+
+import { LoginComponent } from './login.component';
+import { posLoginComponent } from './posLogin.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     ConcursoComponent,
-    MarcacaoComponent
+    MarcacaoComponent,
+    ApostadoresComponent,
+    LoginComponent,
+    posLoginComponent
   ],
   imports: [
     BrowserModule,
@@ -27,9 +37,20 @@ import { ApostadorService } from './apostador.service';
       {
         path: 'marcacao',
         component: MarcacaoComponent
+      },
+      {
+        path: 'apostadores',
+        component: ApostadoresComponent
+      },
+      {
+        path: 'login',
+        component: LoginComponent
+      },
+      {
+        path: 'posLogin',
+        component: posLoginComponent
       }
     ])
-
   ],
   providers: [ApostadorService],
   bootstrap: [AppComponent]

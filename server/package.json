@@ -10,8 +10,13 @@
   "license": "ISC",
   "dependencies": {
     "cheerio": "^0.22.0",
+    "cucumber": "^4.2.1",
     "express": "^4.16.3",
     "request": "^2.65.0",
+    "body-parser": "^1.18.2",
+    "@types/body-parser": "^1.16.5",
+    "@types/express": "^4.0.37",
+    "typescript": "^2.9.2",
     "url-parse": "^1.0.5"
   },
   "devDependencies": {
