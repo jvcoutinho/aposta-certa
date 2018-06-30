@@ -92,3 +92,4 @@ function findIndex(array: any[], element: any): number {
     }
   }
 }
+

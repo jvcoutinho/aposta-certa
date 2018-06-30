@@ -6,7 +6,6 @@ import { Apostador } from "./apostador";
 
 @Injectable()
 export class ApostadorService {
-    
     private acURL: String = 'http://localhost:3000';
     private headers = new Headers({'Content-Type': 'application/json'});
 
@@ -34,7 +33,6 @@ export class ApostadorService {
         .then(res => res.json() as Aposta[])
         .catch(e => console.log('Erro de acesso: ' + e));
     }
-    
 
     getAcumulo(): any {
         return this.http.get(this.acURL + "/acumulo")

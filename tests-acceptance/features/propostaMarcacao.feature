@@ -85,3 +85,13 @@ Given Está proposto aposta "simples" para décimo terceiro jogo
 Given Está proposto aposta "simples" para décimo quarto jogo
 When Eu solicito para ver valor da aposta 
 Then Eu vejo o valor da aposta "24 reais"
+
+Scenario: Ver proposta de aposta simples com probabilidade igual
+Given Eu estou na página "ApostaCerta"
+Given Terá o jogo "Grêmio-RS" contra "Náutico-PE"
+Given A probabilidade de vitória do mandante "Grêmio-RS" é "35%"
+Given A probabilidade de vitória do visitante "Náutico-PE" é "35%"
+Given A probabilidade de empate é "30%"
+When Eu solicito para "Propor marcação"
+Then Vejo a proposta de aposta "simples" para "vitória do Grêmio-RS"
+    
